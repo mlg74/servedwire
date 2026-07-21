@@ -2,7 +2,7 @@
 title: "Best GPS Cameras for Process Servers in 2026 (AB 747 Compliant)"
 description: "AB 747 requires GPS-verified photos on every serve attempt by 2027. Here are the best cameras and apps for California process servers at every price point."
 pubDate: 2026-07-21
-category: "Gear"
+category: "Software Reviews"
 author: "Pete Campbell"
 ---
 
