@@ -1,0 +1,36 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 text-slate-400 mt-16">
+  <div class="max-w-5xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="text-amber-500 font-bold text-lg mb-2">SERVED<span class="text-white">WIRE</span></div>
+        <p class="text-sm">The news wire for process servers and legal professionals. AI tools, compliance, and industry news — weekly.</p>
+      </div>
+      <div>
+        <div class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Topics</div>
+        <ul class="space-y-1 text-sm">
+          <li><a href="/articles?category=Compliance" class="hover:text-white transition-colors">Compliance</a></li>
+          <li><a href="/articles?category=AI+Tools" class="hover:text-white transition-colors">AI Tools</a></li>
+          <li><a href="/articles?category=Business" class="hover:text-white transition-colors">Business</a></li>
+          <li><a href="/articles?category=Skip+Tracing" class="hover:text-white transition-colors">Skip Tracing</a></li>
+          <li><a href="/articles?category=Software+Reviews" class="hover:text-white transition-colors">Software Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Site</div>
+        <ul class="space-y-1 text-sm">
+          <li><a href="/newsletter" class="hover:text-white transition-colors">Newsletter</a></li>
+          <li><a href="/resources" class="hover:text-white transition-colors">Resources</a></li>
+          <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs">
+      <span>© {year} Served Wire. All rights reserved.</span>
+      <span>Some links are affiliate links. <a href="/about#affiliate" class="underline hover:text-white">Disclosure.</a></span>
+    </div>
+  </div>
+</footer>

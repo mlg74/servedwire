@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const sorted = allArticles.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const categories = ['All', 'Compliance', 'AI Tools', 'Business', 'Skip Tracing', 'Software Reviews'];
+---
+
+<BaseLayout title="Articles" description="Guides, reviews, and compliance updates for process servers and legal professionals.">
+  <section class="py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-slate-900 mb-2">Articles</h1>
+      <p class="text-slate-500 mb-8">Guides, tool reviews, and compliance updates — written by a working process server.</p>
+
+      {sorted.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sorted.map(article => (
+            <ArticleCard
+              title={article.data.title}
+              description={article.data.description}
+              slug={article.slug}
+              category={article.data.category}
+              pubDate={article.data.pubDate}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-slate-400 text-center py-16">First articles dropping soon — <a href="/newsletter" class="text-amber-600 underline">subscribe</a> to be first to read them.</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

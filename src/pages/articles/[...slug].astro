@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterCTA from '../../components/NewsletterCTA.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+const formattedDate = article.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const categoryColors: Record<string, string> = {
+  'Compliance': 'bg-red-100 text-red-700',
+  'AI Tools': 'bg-blue-100 text-blue-700',
+  'Business': 'bg-green-100 text-green-700',
+  'Skip Tracing': 'bg-purple-100 text-purple-700',
+  'Software Reviews': 'bg-amber-100 text-amber-700',
+};
+
+const colorClass = categoryColors[article.data.category] ?? 'bg-slate-100 text-slate-700';
+---
+
+<BaseLayout title={article.data.title} description={article.data.description}>
+  <article class="py-12 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Breadcrumb -->
+      <nav class="text-sm text-slate-400 mb-6">
+        <a href="/" class="hover:text-slate-600">Home</a> /
+        <a href="/articles" class="hover:text-slate-600 mx-1">Articles</a> /
+        <span class="text-slate-500">{article.data.category}</span>
+      </nav>
+
+      <!-- Header -->
+      <div class="mb-8">
+        <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${colorClass} mb-4 inline-block`}>
+          {article.data.category}
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
+          {article.data.title}
+        </h1>
+        <div class="flex items-center gap-3 text-sm text-slate-500">
+          <span>By <strong class="text-slate-700">{article.data.author}</strong></span>
+          <span>·</span>
+          <time>{formattedDate}</time>
+        </div>
+      </div>
+
+      <!-- Affiliate disclosure -->
+      <div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 text-xs text-amber-800 mb-8">
+        <strong>Disclosure:</strong> Some links in this article are affiliate links. If you click and buy, I may earn a small commission at no extra cost to you. I only recommend tools I'd actually use.
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-slate prose-headings:font-bold prose-a:text-amber-600 prose-a:no-underline hover:prose-a:underline max-w-none">
+        <Content />
+      </div>
+
+      <!-- Newsletter CTA -->
+      <NewsletterCTA variant="inline" />
+
+      <!-- Back link -->
+      <div class="mt-8 pt-8 border-t border-slate-200">
+        <a href="/articles" class="text-amber-600 text-sm font-medium hover:underline">← All articles</a>
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+interface Props {
+  variant?: 'inline' | 'hero';
+}
+const { variant = 'inline' } = Astro.props;
+---
+
+{variant === 'hero' ? (
+  <div class="bg-slate-900 text-white rounded-xl px-8 py-10 text-center max-w-xl mx-auto">
+    <div class="text-amber-500 font-bold text-xs uppercase tracking-widest mb-2">Free Weekly Newsletter</div>
+    <h2 class="text-2xl font-bold mb-3">Stay ahead of what's changing.</h2>
+    <p class="text-slate-300 mb-6 text-sm">AI tools, AB 747 compliance updates, skip tracing tips, and industry news — written for process servers and legal professionals who actually work in the field.</p>
+    <!-- Beehiiv embed — replace with your actual embed code after setup -->
+    <div class="beehiiv-placeholder bg-slate-800 rounded-lg p-4 text-slate-400 text-sm">
+      [Newsletter signup form — add Beehiiv embed code here]
+    </div>
+    <p class="text-slate-500 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+  </div>
+) : (
+  <div class="border border-slate-200 rounded-xl px-6 py-8 bg-slate-50 my-10">
+    <div class="text-amber-600 font-bold text-xs uppercase tracking-widest mb-2">Served Wire Newsletter</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-2">Get this in your inbox every week.</h3>
+    <p class="text-slate-600 text-sm mb-4">AI tools, compliance updates, and practical tips for process servers and legal pros. Free, always.</p>
+    <!-- Beehiiv embed — replace with your actual embed code after setup -->
+    <div class="beehiiv-placeholder bg-white border border-slate-200 rounded-lg p-4 text-slate-400 text-sm text-center">
+      [Newsletter signup form — add Beehiiv embed code here]
+    </div>
+  </div>
+)}

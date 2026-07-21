@@ -1,0 +1,36 @@
+---
+const navLinks = [
+  { label: 'Articles', href: '/articles' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Newsletter', href: '/newsletter' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<header class="bg-slate-900 text-white">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 group">
+      <span class="text-amber-500 font-bold text-xl tracking-tight group-hover:text-amber-400 transition-colors">
+        SERVED<span class="text-white">WIRE</span>
+      </span>
+      <span class="hidden sm:block text-slate-400 text-xs mt-0.5">The legal field's news wire</span>
+    </a>
+
+    <nav class="flex items-center gap-1 sm:gap-4">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="text-slate-300 hover:text-white text-sm px-2 py-1 rounded transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/newsletter"
+        class="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-sm px-3 py-1.5 rounded transition-colors ml-2"
+      >
+        Subscribe
+      </a>
+    </nav>
+  </div>
+</header>

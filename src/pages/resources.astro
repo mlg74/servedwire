@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
+---
+
+<BaseLayout title="Resources" description="Curated tools for process servers — GPS cameras, process serving apps, legal SaaS, and skip tracing databases.">
+  <section class="py-12 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <h1 class="text-3xl font-bold text-slate-900 mb-2">Resources</h1>
+      <p class="text-slate-500 mb-2">Curated tools I've evaluated for process servers and legal professionals.</p>
+      <p class="text-xs text-slate-400 mb-10">
+        <strong>Disclosure:</strong> Some links are affiliate links. I may earn a commission at no cost to you. I only list tools I'd actually use.
+      </p>
+
+      <!-- GPS & Field Tools -->
+      <section class="mb-12">
+        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6">📍 GPS & Field Tools (AB 747 Compliance)</h2>
+        <div class="space-y-4">
+          {[
+            {
+              name: 'Timestamp Camera Pro (iOS)',
+              desc: 'Burns GPS coordinates, timestamp, and address directly onto photos. Best AB 747 compliance app for iPhone.',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'Recommended',
+            },
+            {
+              name: 'GPS Map Camera (Android)',
+              desc: 'Same concept for Android. Free version works; Pro adds more metadata options.',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'Budget Pick',
+            },
+            {
+              name: 'Ricoh WG-80',
+              desc: 'Waterproof, GPS-embedded dedicated camera. Best dedicated hardware option for heavy daily use.',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'Hardware',
+            },
+          ].map(item => (
+            <div class="flex items-start justify-between gap-4 p-4 border border-slate-200 rounded-xl hover:border-amber-300 transition-colors">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-semibold text-slate-900">{item.name}</span>
+                  <span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
+                </div>
+                <p class="text-slate-500 text-sm">{item.desc}</p>
+              </div>
+              <a href={item.link} class="shrink-0 text-sm font-medium text-amber-600 hover:underline whitespace-nowrap">View →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Process Serving Software -->
+      <section class="mb-12">
+        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6">📋 Process Serving Software</h2>
+        <div class="space-y-4">
+          {[
+            {
+              name: 'ServeManager',
+              desc: 'Job tracking, e-filing, affidavit generation. Industry standard for independent servers.',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'Popular',
+            },
+            {
+              name: 'ProofServe',
+              desc: 'AI-powered PDF parsing for serve requests. Converts legal documents to structured data fast.',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'AI-Powered',
+            },
+          ].map(item => (
+            <div class="flex items-start justify-between gap-4 p-4 border border-slate-200 rounded-xl hover:border-amber-300 transition-colors">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-semibold text-slate-900">{item.name}</span>
+                  <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
+                </div>
+                <p class="text-slate-500 text-sm">{item.desc}</p>
+              </div>
+              <a href={item.link} class="shrink-0 text-sm font-medium text-amber-600 hover:underline whitespace-nowrap">View →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Legal SaaS -->
+      <section class="mb-12">
+        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2 mb-6">⚖️ Legal SaaS (For Solo Attorneys)</h2>
+        <div class="space-y-4">
+          {[
+            {
+              name: 'Clio',
+              desc: 'Best-in-class practice management for small firms. Case management, billing, client portal, and now AI (Vincent).',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'Editor\'s Pick',
+            },
+            {
+              name: 'MyCase',
+              desc: 'Solid alternative to Clio with integrated payment processing and a cleaner mobile app.',
+              link: 'AFFILIATE_LINK_PLACEHOLDER',
+              badge: 'Strong Alt',
+            },
+          ].map(item => (
+            <div class="flex items-start justify-between gap-4 p-4 border border-slate-200 rounded-xl hover:border-amber-300 transition-colors">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-semibold text-slate-900">{item.name}</span>
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
+                </div>
+                <p class="text-slate-500 text-sm">{item.desc}</p>
+              </div>
+              <a href={item.link} class="shrink-0 text-sm font-medium text-amber-600 hover:underline whitespace-nowrap">View →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <NewsletterCTA variant="inline" />
+    </div>
+  </section>
+</BaseLayout>

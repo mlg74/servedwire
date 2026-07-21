@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  category: string;
+  pubDate: Date;
+}
+
+const { title, description, slug, category, pubDate } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  'Compliance': 'bg-red-100 text-red-700',
+  'AI Tools': 'bg-blue-100 text-blue-700',
+  'Business': 'bg-green-100 text-green-700',
+  'Skip Tracing': 'bg-purple-100 text-purple-700',
+  'Software Reviews': 'bg-amber-100 text-amber-700',
+};
+
+const colorClass = categoryColors[category] ?? 'bg-slate-100 text-slate-700';
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+---
+
+<article class="border border-slate-200 rounded-xl p-6 hover:border-amber-400 hover:shadow-md transition-all group">
+  <a href={`/articles/${slug}`} class="block">
+    <div class="flex items-center gap-2 mb-3">
+      <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${colorClass}`}>{category}</span>
+      <span class="text-slate-400 text-xs">{formattedDate}</span>
+    </div>
+    <h2 class="text-slate-900 font-bold text-lg leading-snug mb-2 group-hover:text-amber-700 transition-colors">
+      {title}
+    </h2>
+    <p class="text-slate-500 text-sm leading-relaxed">{description}</p>
+    <span class="inline-block mt-3 text-amber-600 text-sm font-medium group-hover:underline">Read more →</span>
+  </a>
+</article>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
+---
+
+<BaseLayout title="About" description="Served Wire is written by Pete Campbell — California process server, law student, and legal tech builder.">
+  <section class="py-12 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <h1 class="text-3xl font-bold text-slate-900 mb-6">About Served Wire</h1>
+
+      <div class="prose prose-slate max-w-none">
+        <p>
+          I'm Pete Campbell — I've been a process server in California for years, and I'm currently in law school. I built this site because I got tired of reading generic "legal tech" content written by people who have never served a single paper.
+        </p>
+
+        <p>
+          Process servers, paralegals, and solo attorneys don't need think-pieces about AI disrupting BigLaw. They need to know which $15 app actually burns GPS coordinates into a photo so they're AB 747 compliant. They need to know which skip tracing database is actually worth the subscription fee. They need practical answers, not hype.
+        </p>
+
+        <p>
+          That's what Served Wire is. A weekly newsletter and article archive covering the tools, compliance updates, and industry news that matter to people who actually work in the legal field — not just write about it.
+        </p>
+
+        <h2>What I cover</h2>
+        <ul>
+          <li><strong>AB 747 / GPS compliance</strong> — California's GPS photo mandate takes effect January 1, 2027. I'm watching every update.</li>
+          <li><strong>AI tools</strong> — practical reviews of tools that save real time, not just impressive demos.</li>
+          <li><strong>Skip tracing</strong> — the databases and techniques I actually use.</li>
+          <li><strong>Software reviews</strong> — process serving apps, case management, e-filing — honest takes.</li>
+          <li><strong>Business</strong> — growing and running a process serving operation.</li>
+        </ul>
+
+        <h2 id="affiliate">Affiliate Disclosure</h2>
+        <p>
+          Some links on this site are affiliate links, meaning I may earn a small commission if you click through and make a purchase — at no additional cost to you. I only recommend tools I've actually evaluated and would genuinely use. My editorial opinions are not for sale.
+        </p>
+      </div>
+
+      <NewsletterCTA variant="inline" />
+    </div>
+  </section>
+</BaseLayout>

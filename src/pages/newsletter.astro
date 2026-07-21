@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Newsletter" description="Subscribe to Served Wire — the free weekly newsletter for process servers and legal professionals.">
+  <section class="py-16 px-4">
+    <div class="max-w-xl mx-auto text-center">
+
+      <div class="text-amber-600 font-bold text-xs uppercase tracking-widest mb-3">Free Newsletter</div>
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">The legal field's news wire.</h1>
+      <p class="text-slate-500 text-lg mb-10">
+        AI tools, AB 747 GPS compliance, skip tracing tips, and industry news — delivered weekly. Written by a working California process server.
+      </p>
+
+      <!-- Beehiiv embed — replace this block with your actual Beehiiv embed code -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 mb-6">
+        <p class="text-slate-400 text-sm">[Add Beehiiv full-page subscribe embed here]</p>
+      </div>
+
+      <p class="text-slate-400 text-xs">No spam. No nonsense. Unsubscribe anytime.</p>
+
+      <div class="mt-16 border-t border-slate-100 pt-10">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">What you'll get</h2>
+        <div class="text-left space-y-4 max-w-sm mx-auto">
+          {[
+            ['📍', 'AB 747 compliance updates', 'What the GPS law actually requires and when you need to be ready.'],
+            ['🤖', 'AI tool reviews', 'What works in the field. No hype.'],
+            ['🔍', 'Skip tracing tips', 'Free and paid tools that actually find people.'],
+            ['📱', 'App and software reviews', 'Process serving apps, case management, e-filing — honest takes.'],
+          ].map(([icon, title, desc]) => (
+            <div class="flex gap-3">
+              <span class="text-xl mt-0.5">{icon}</span>
+              <div>
+                <div class="font-semibold text-slate-800 text-sm">{title}</div>
+                <div class="text-slate-500 text-sm">{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
