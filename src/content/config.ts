@@ -6,7 +6,7 @@ const articles = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
-    category: z.enum(['Compliance', 'AI Tools', 'Business', 'Skip Tracing', 'Software Reviews']),
+    category: z.enum(['Compliance', 'AI Tools', 'Business', 'Skip Tracing', 'Software Reviews', 'From the Field']),
     author: z.string().default('Pete Campbell'),
     featured: z.boolean().default(false),
   }),
