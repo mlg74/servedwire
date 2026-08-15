@@ -2,7 +2,7 @@
 title: "AB 747 GPS Compliance: 5 Field Apps Already Delivering Court-Ready Proofs in 2026"
 description: "You don't need to wait until January 2027 to build a compliant GPS documentation workflow. These five apps are what California process servers are actually using in the field right now."
 pubDate: 2026-07-23
-category: "Tools"
+category: "AI Tools"
 author: "Pete Campbell"
 ---
 
