@@ -1,8 +1,8 @@
 ---
 title: "Serving the East Bay: Practical Rules and Pitfalls for Alameda & Contra Costa Counties"
 pubDate: 2026-10-12
-category: "process-serving"
-author: "Andy"
+category: "California Courts"
+author: "Pete Campbell"
 description: "Practical tips for process servers working in Alameda and Contra Costa counties, including local rules for substituted service, gated communities, and high-volume areas."
 ---
 
